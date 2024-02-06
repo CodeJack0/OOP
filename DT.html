@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        #nav {
+            background-color: black;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        #nav a:hover {
+            background-color: red;
+        }
+
+        #container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h4 {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    
+<div id="nav">
+    <a href="subject.html">Professor</a>
+</div>
+
+<div id="container">
+    <h1 id="ProfileTitle">Student Profile</h1>
+    <h4 id="name"></h4>
+    <h4 id="grade"></h4>
+    <h4 id="date"></h4>
+    <h4 id="hobbies"></h4>
+</div>
+
+<script>
+    let studentName = "John Isaac A. Echaluce";
+    let studentGrade = 92.1;
+    let date = new Date("2024-02-14");
+    let hobbies = ["Reading Novels", "Playing Games"];
+
+    document.getElementById("name").innerHTML = "Name of Student: " +  studentName;
+    document.getElementById("grade").innerHTML = "Grade: " +  studentGrade;
+    let dateEnrolled = document.getElementById("date");
+    dateEnrolled.innerHTML = "Date Enrolled: " + date.toLocaleDateString();
+    document.getElementById("hobbies").innerHTML =  "Hobbies: " + hobbies.join(", ");
+</script>
+
+</body>
+</html>

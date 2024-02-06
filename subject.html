@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    #nav {
+        background-color: black;
+        padding: 10px;
+        text-align: center;
+    }
+
+    #nav a {
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+    }
+
+    #nav a:hover {
+        background-color: red;
+    }
+
+    #container {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    h4 {
+        margin-bottom: 10px;
+    }
+    
+    </style>
+</head>
+<body>
+        
+<div id="nav">
+    <a href="DT.html">Student</a>
+</div>
+
+<div id="container">
+    <h1 id="Professor">Professor Profile</h1>
+      <h4 id="professor0"></h4>
+      <h4 id="subject0"></h4>
+      <h4 id="subject1"></h4>
+
+</div>
+
+
+
+
+<script> 
+    let professorName = "Ms. Shaira Le";
+    let subjectIT0 = "Integrative Programming and Technology";
+    let subjectIT1 = "OOP using PHP";
+
+    document.getElementById("professor0").innerHTML = professorName;
+    document.getElementById("subject0").innerHTML = subjectIT0;
+   document.getElementById("subject1").innerHTML = subjectIT1;
+</script>
+</body>
+</html>
+
