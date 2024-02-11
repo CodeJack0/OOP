@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Grades</title>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    caption {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<table border="1">
+  <caption>Student Grades</caption>
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Middle Name</th>
+      <th>Last Name</th>
+      <th>Course and Year</th>
+      <th>Prelim</th>
+      <th>Midterm</th>
+      <th>Pre-final</th>
+      <th>Final</th>
+      <th>Average Grade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>John</td>
+      <td>W.</td>
+      <td>Wick</td>
+      <td>Computer Science - 2nd Year</td>
+      <td>85</td>
+      <td>78</td>
+      <td>82</td>
+      <td>88</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Cardo</td>
+      <td>D</td>
+      <td>Dalisay</td>
+      <td> Criminology - 3rd Year</td>
+      <td>90</td>
+      <td>85</td>
+      <td>88</td>
+      <td>92</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>James</td>
+      <td>B</td>
+      <td>Bond</td>
+      <td>Political Science - 1st Year</td>
+      <td>78</td>
+      <td>80</td>
+      <td>75</td>
+      <td>82</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Walter</td>
+      <td>W</td>
+      <td>White</td>
+      <td>Chemistry - 2nd Year</td>
+      <td>95</td>
+      <td>92</td>
+      <td>95</td>
+      <td>90</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Saul</td>
+      <td>D</td>
+      <td>Goodman</td>
+      <td>Law - 2nd Year</td>
+      <td>82</td>
+      <td>85</td>
+      <td>80</td>
+      <td>85</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+  const rows = document.querySelectorAll('tbody tr');
+  
+  rows.forEach(row => {
+    const grades = Array.from(row.querySelectorAll('td')).slice(4, 8).map(td => parseInt(td.textContent));
+    const averageGrade = grades.reduce((acc, val) => acc + val, 0) / grades.length;
+    row.querySelector('td:last-child').textContent = averageGrade.toFixed(2);
+  });
+  
+  const tbody = document.querySelector('tbody');
+  const sortedRows = Array.from(tbody.querySelectorAll('tr')).sort((a, b) => {
+    const aGrade = parseFloat(a.lastElementChild.textContent);
+    const bGrade = parseFloat(b.lastElementChild.textContent);
+    return bGrade - aGrade;
+  });
+  
+  sortedRows.forEach((row, index) => {
+    row.querySelector('td:last-child').textContent += ' (Rank: ' + (index + 1) + ')';
+  });
+});
+</script>
+
+</body>
+</html>
